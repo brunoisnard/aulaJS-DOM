@@ -1,8 +1,10 @@
 
 
 
-const turnOn = document.getElementById('turnOn');
-const turnOff = document.getElementById('turnOff');
+const turOn = document.getElementById('turOn');
+const turoff = document.getElementById('turoff');
+
+
 const lamp = document.getElementById('lamp');
 
 
@@ -23,8 +25,33 @@ function lampOff() {
     }
 }
 
+function lampquebrada() {
+    if (!isLampBroken()){
+        lamp.src='./img/quebrada.jpg';
+    }
+}
+
+
+
+function refreshPage() {
+    location.reload(); 
+}
+
+
+
+
+turOn.addEventListener('click', lampOn);
+turoff.addEventListener('click', lampOff);
+
+lamp.addEventListener('dblclick',lampquebrada);
 
 lamp.addEventListener('mouseover', lampOn);
 lamp.addEventListener('mouseleave', lampOff);
+
+
+
+
+    
+
 
 
